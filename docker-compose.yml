@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  mikrotik-ui:
+    build: .
+    container_name: mikrotik-dashboard-ui
+    ports:
+      - "8001:80"
+    restart: unless-stopped
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
